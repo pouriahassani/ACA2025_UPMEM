@@ -4,7 +4,7 @@
 Write your first DPU program to understand the basic programming model and tasklet parallelism.
 
 ## Background
-Each DPU has 11 tasklets (lightweight threads) that execute the same program in parallel. Each tasklet has a unique ID (0-10) and can perform different computations based on this ID.
+Each DPU has 24 tasklets (lightweight threads) that execute the same program in parallel. Each tasklet has a unique ID (0-10) and can perform different computations based on this ID.
 
 ## Your Task
 
