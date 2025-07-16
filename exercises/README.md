@@ -5,7 +5,11 @@
 In this lab, you'll learn to program UPMEM's Data Processing Units (DPUs) - processors embedded directly inside memory chips. You'll start with simple examples and progress to parallel algorithms.
 
 ---
-
+## Upmem environment setup
+```bash
+tar -xvf exercises/upmem-2025.1.0-Linux-x86_64.tar.gz 
+source exercises/upmem-2025.1.0-Linux-x86_64/upmem_env.sh
+```
 ## Exercise Overview
 
 ### Exercise 1: First DPU Program (Warm-up)
