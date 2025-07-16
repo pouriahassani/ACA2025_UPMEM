@@ -21,7 +21,7 @@ int main() {
     printf("=== Exercise 1: First DPU Program ===\n");
     
     // TODO: Allocate DPUs
-    // Use dpu_alloc(count, profile, dpu_set_ptr)
+    dpu_alloc(1, profile, dpu_set);
     /* YOUR CODE HERE */
     
     // TODO: Load the DPU program
@@ -29,11 +29,11 @@ int main() {
     /* YOUR CODE HERE */
     
     // TODO: Launch the DPU program
-    // Use dpu_launch(dpu_set, DPU_SYNCHRONOUS)
+    dpu_launch(dpu_set, DPU_SYNCHRONOUS);
     /* YOUR CODE HERE */
     
     // TODO: Copy results from DPU to host
-    // Use dpu_copy_from(dpu_set, "results", 0, results, sizeof(results))
+    dpu_copy_from(dpu_set, "results", 0, results, sizeof(results));
     /* YOUR CODE HERE */
     
     // Display results
