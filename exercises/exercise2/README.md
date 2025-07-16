@@ -34,7 +34,6 @@ Complete the host program that:
 ## Files Provided
 - `dpu_program.c` - DPU program template
 - `host_program.c` - Host program template
-- `Makefile` - Build script
 
 ## Expected Output
 ```
@@ -64,9 +63,20 @@ All 1024 elements verified correct!
 ## Time Limit
 15 minutes
 
-## Compilation
+## Compilation Commands
+**Compile the DPU program:**
 ```bash
-make run
+dpu-upmem-dpurte-clang -DNR_TASKLETS=16 -o dpu_program dpu_program.c
+```
+
+**Compile the host program:**
+```bash
+gcc $(dpu-pkg-config --cflags --libs dpu) host_program.c -o host_program
+```
+
+**Run the program:**
+```bash
+./host_program
 ```
 
 This exercise is foundational for all parallel array processing!

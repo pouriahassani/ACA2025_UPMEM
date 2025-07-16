@@ -23,7 +23,6 @@ Write a host program that:
 ## Files Provided
 - `dpu_program.c` - DPU program template (you complete this)
 - `host_program.c` - Host program template (you complete this)
-- `Makefile` - Build script
 
 ## Expected Output
 ```
@@ -42,9 +41,19 @@ Tasklet 10 computed: 100
 ## Time Limit
 10 minutes
 
-## Compilation
+## Compilation Commands
+**Compile the DPU program:**
 ```bash
-make
+dpu-upmem-dpurte-clang -DNR_TASKLETS=16 -o dpu_program dpu_program.c
+```
+
+**Compile the host program:**
+```bash
+gcc $(dpu-pkg-config --cflags --libs dpu) host_program.c -o host_program
+```
+
+**Run the program:**
+```bash
 ./host_program
 ```
 

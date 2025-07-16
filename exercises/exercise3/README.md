@@ -49,7 +49,6 @@ Use barriers to ensure tasklets coordinate properly during reduction.
 ## Files Provided
 - `dpu_program.c` - DPU program template
 - `host_program.c` - Host program template
-- `Makefile` - Build script
 
 ## Expected Output
 ```
@@ -81,9 +80,20 @@ Performance Analysis:
 ## Time Limit
 20 minutes
 
-## Compilation
+## Compilation Commands
+**Compile the DPU program:**
 ```bash
-make run
+dpu-upmem-dpurte-clang -DNR_TASKLETS=16 -o dpu_program dpu_program.c
+```
+
+**Compile the host program:**
+```bash
+gcc $(dpu-pkg-config --cflags --libs dpu) host_program.c -o host_program
+```
+
+**Run the program:**
+```bash
+./host_program
 ```
 
 This is a challenging exercise that demonstrates real parallel programming!
