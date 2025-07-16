@@ -46,7 +46,9 @@ dpu-upmem-dpurte-clang -DNR_TASKLETS=16 -o dpu_program dpu_program.c
 
 **Compile the host program:**
 ```bash
-gcc $(dpu-pkg-config --cflags --libs dpu) host_program.c -o host_program
+
+gcc --std=c99 host_program.c -o host_program `dpu-pkg-config --cflags --libs dpu`
+
 ```
 
 ### Step 3: Run Your Program
